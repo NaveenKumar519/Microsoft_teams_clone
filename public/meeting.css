@@ -1,0 +1,91 @@
+body{
+    background-color: #aaa;
+    font-family: 'Akaya Kanadaka', cursive;
+    
+}
+video{
+    border-radius: 20px;
+    transform: rotateY(180deg);
+}
+.myContainer {
+    height: 100vh;
+    display: flex;
+}
+
+.myContainer_left {
+    flex: 1.0;
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+.myContainer_videos {
+    flex-grow: 1;
+    background-color: #aaa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    overflow-y: auto;
+}
+
+.myContainer_controls {
+    background-color: #464775;
+}
+
+.myContainer_right
+ {
+    background-color: #242324;
+    border-left: 1px solid #3D3D42;
+}
+
+.myContainer_controls {
+    color: #D2D2D2;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+}
+
+.myContainer_controls__block {
+    display: flex;
+}
+
+.myContainer_controls__button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 10px;
+    min-width: 80px;
+    cursor: pointer;
+}
+
+.myContainer_controls__button:hover {
+    background-color: #343434;
+    border-radius: 5px;
+}
+
+.myContainer_controls__button i {
+    font-size: 25px;
+}
+
+.myContainer_right {
+    display: flex;
+    flex-direction: column;
+    max-width: 20%;
+}
+
+
+
+
+
+
+.leave_meeting {
+    color: #EB534B;
+}
+
+.unmute, .stop {
+    color: #CC3B33;
+}
+
