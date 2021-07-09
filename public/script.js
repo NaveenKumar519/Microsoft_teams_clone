@@ -9,6 +9,7 @@ const myPeer = new Peer(undefined, {
 
 const user= prompt("Please Enter your name");
 let myVideoStream;
+let showChat = true;
 const myVideo = document.createElement('video')
 myVideo.muted = true;
 const peers = {}
@@ -31,6 +32,19 @@ navigator.mediaDevices.getUserMedia({
    
   })
   
+  let text = $("input");
+  
+  $('html').keydown(function (e) {
+    if (e.which == 13 && text.val().length !== 0) {
+      socket.emit('message', text.val());
+      text.val('')
+    }
+  });
+  socket.on("createMessage", (message,username) => {
+    // console.log(message)
+    $("ul").append(`<li class="message"><b> ${username===user?"You":username}</b><br/>${message}</li>`);
+    scrollToBottom()
+  })
 })
 
 socket.on('user-disconnected', userId => {
@@ -60,6 +74,13 @@ function addVideoStream(video, stream) {
     video.play()
   })
   videoGrid.append(video)
+}
+
+
+
+const scrollToBottom = () => {
+  var d = $('.chat_window');
+  d.scrollTop(d.prop("scrollHeight"));
 }
 
 
@@ -131,5 +152,30 @@ addParticipantsBtn.addEventListener("click", (e) => {
 const leave = ()=>{
   location.replace("/")
 
+}
+const toggleChat = () =>{
+  
+  var mr = document.getElementsByClassName("myContainer_right");
+  var ml = document.getElementsByClassName("myContainer_left");
+  if(showChat){
+    ml[0].style.flex = "1";
+    mr[0].style.display = "none";
+    mr[0].style.transition = "display 0.3s";
+    ml[0].style.transition = "flex 0.3s";
+    document.getElementById('chat_icon').style.color = "#d73b3e";
+    
+  }
+  else{
+   
+    ml[0].style.flex = "0.8";
+    mr[0].style.display = "flex";
+    mr[0].style.transition = "display 0.3s";
+    ml[0].style.transition = "flex 0.3s";
+    document.getElementById('chat_icon').style.color = "white";
+    
+  }
+  
+  showChat = !showChat;
+ 
 }
 

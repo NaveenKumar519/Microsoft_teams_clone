@@ -22,15 +22,20 @@ app.get('/:room', (req, res) => {
   res.render('meeting', { meetingId: req.params.room })
 })
 io.on('connection', socket => {
-  socket.on('join-room', (meetingId, userId,username) => {
-    socket.join(meetingId)
-    socket.to(meetingId).emit('user-connected', userId);
-    socket.on('disconnect', () => {
-      socket.to(meetingId).emit('user-disconnected', userId)
+    socket.on('join-room', (meetingId, userId,username) => {
+      socket.join(meetingId)
+      socket.to(meetingId).emit('user-connected', userId);
+  
+      socket.on('message', (message,userId) => {
+  
+        io.to(meetingId).emit('createMessage', message,username)
+    }); 
+  
+      socket.on('disconnect', () => {
+        socket.to(meetingId).emit('user-disconnected', userId)
+      })
     })
   })
-})
+  
 
 server.listen(process.env.PORT||3000)
-
-

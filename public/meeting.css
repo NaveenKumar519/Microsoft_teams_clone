@@ -13,12 +13,14 @@ video{
 }
 
 .myContainer_left {
-    flex: 1.0;
+    flex: 0.8;
     display: flex;
     flex-direction: column;
 }
 
-
+.myContainer_right {
+    flex: 0.2
+}
 
 .myContainer_videos {
     flex-grow: 1;
@@ -76,10 +78,39 @@ video{
     max-width: 20%;
 }
 
+.myContainer_header {
+    padding-top: 5px;
+    color: #F5F5F5;
+    background-color: #464775;
+    text-align: center;
+}
+#chat_message{
+    background-color: #fff;
+    color: #464775;
+}
+.chat_window {
+    flex-grow: 1;
+    overflow-y: auto;
+    background-color: #fff;
+   
+}
+.messages{
+    color: #464775;
+    list-style: none;
+}
 
+.message_myContainer {
+    padding: 22px 12px;
+    display: flex;
+    background-color: #464775;
+}
 
-
-
+.message_myContainer input {
+    flex-grow: 1;
+    background-color: transparent;
+    border: none;
+    color: #F5F5F5;
+}
 
 .leave_meeting {
     color: #EB534B;
@@ -88,4 +119,3 @@ video{
 .unmute, .stop {
     color: #CC3B33;
 }
-
