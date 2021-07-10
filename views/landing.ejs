@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Akaya+Kanadaka&family=Krona+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="landing.css">
+    <script src="https://kit.fontawesome.com/c939d0e917.js"></script>
+    <title>Landing</title>
+</head>
+<body>
+    <div class="navbar">
+
+        <a  href="#home"><i class="fab fa-microsoft"></i> Microsoft Teams</a>
+        
+      </div>
+      
+    
+   
+    <div class="container">
+        <div class="row">
+          <div class="col-12 col-md-6 mt-4">
+            <h1>WELCOME TO MICROSOFT TEAMS !</h1>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+            <button class="btn mt-3" onclick="start()" ><i class="fa fa-video-camera" aria-hidden="true"></i> Start an instant meeting</button>
+          </div>
+          <div class="col-12 col-md-6 mt-4">
+            <img class="img" src="https://handsontek.net/images/Teams/Custom%20Backgrounds/hero.png">
+          </div>
+        </div>
+      </div>
+    <script>
+        const start=()=>
+        {
+            location.replace('/meeting')
+        }
+    </script>
+</body>
+</html>

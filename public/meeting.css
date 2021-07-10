@@ -94,6 +94,9 @@ video{
     background-color: #fff;
    
 }
+#chat_icon{
+    color : #d73b3e;
+}
 .messages{
     color: #464775;
     list-style: none;

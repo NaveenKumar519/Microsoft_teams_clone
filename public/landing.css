@@ -1,0 +1,40 @@
+body {
+    margin: 0;
+    font-family: 'Akaya Kanadaka', cursive;
+    
+  }
+  .navbar {
+    overflow: hidden;
+    background-color: #464775;
+  }
+  .navbar a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 1.2rem;
+  }
+
+  .btn{
+      height: 50px;
+      background-color: #464775;
+      color: white;
+      font-family: 'Akaya Kanadaka', cursive;
+      font-size: 1.2rem;
+      border: 1px solid white;
+      border-radius: 5px;
+
+  }
+.img{
+    width: 100%;
+    height: 100%;
+    margin: 10px auto;
+}
+  .container{
+      margin-top: 30px;
+  }
+
+  
+  
+  

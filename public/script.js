@@ -162,7 +162,7 @@ const toggleChat = () =>{
     mr[0].style.display = "none";
     mr[0].style.transition = "display 0.3s";
     ml[0].style.transition = "flex 0.3s";
-    document.getElementById('chat_icon').style.color = "#d73b3e";
+    document.getElementById('chat_icon').style.color = "white";
     
   }
   else{
@@ -171,7 +171,7 @@ const toggleChat = () =>{
     mr[0].style.display = "flex";
     mr[0].style.transition = "display 0.3s";
     ml[0].style.transition = "flex 0.3s";
-    document.getElementById('chat_icon').style.color = "white";
+    document.getElementById('chat_icon').style.color = "#d73b3e";
     
   }
   
