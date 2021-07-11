@@ -1,3 +1,4 @@
+//requiring packages
 const express = require('express')
 const app = express()
 const server = require('http').Server(app)
@@ -6,6 +7,7 @@ const { ExpressPeerServer } = require('peer');
 const peerServer = ExpressPeerServer(server, {
   debug: true
 });
+//generating unique id to be used as meeting id
 const { v4: uuidV4 } = require('uuid')
 
 app.use('/peerjs', peerServer);
@@ -13,6 +15,7 @@ app.use('/peerjs', peerServer);
 app.set('view engine', 'ejs')
 app.use(express.static('public'))
 
+//ROUTES
 app.get('/',(req,res)=>{
     res.render("landing");
   })
@@ -27,9 +30,9 @@ io.on('connection', socket => {
     socket.on('join-room', (meetingId, userId,username) => {
       socket.join(meetingId)
       socket.to(meetingId).emit('user-connected', userId);
-  
+        
       socket.on('message', (message,userId) => {
-  
+          //send messages to the same room
         io.to(meetingId).emit('createMessage', message,username)
     }); 
   
